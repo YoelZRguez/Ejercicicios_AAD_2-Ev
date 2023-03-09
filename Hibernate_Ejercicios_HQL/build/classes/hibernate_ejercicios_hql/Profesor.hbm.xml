@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-feb-2023 20:43:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate_ejercicios_hql.Profesor" table="profesor" catalog="instituto1" optimistic-lock="version">
+        <id name="codProfesor" type="string">
+            <column name="cod_profesor" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreProfesor" type="string">
+            <column name="nombre_profesor" length="15" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="ciudad" length="15" />
+        </property>
+        <set name="modulos" table="modulo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cod_profesor" length="2" />
+            </key>
+            <one-to-many class="hibernate_ejercicios_hql.Modulo" />
+        </set>
+    </class>
+</hibernate-mapping>
