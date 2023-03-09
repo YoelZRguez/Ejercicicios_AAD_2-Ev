@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Concesionario>
+  <Coches>
+    <coche>
+      <matricula>1234hyu</matricula>
+      <marca>Audi</marca>
+      <precio>3500</precio>
+    </coche>
+    <coche>
+      <matricula>1111aaa</matricula>
+      <marca>Ford</marca>
+      <precio>5000</precio>
+    </coche>
+    <coche>
+      <matricula>4444ggg</matricula>
+      <marca>Seat</marca>
+      <precio>3500</precio>
+    </coche>
+  </Coches>
+</Concesionario>
