@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-feb-2023 20:52:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="a.AlumnoModulo" table="`alumno-modulo`" catalog="instituto1" optimistic-lock="version">
+        <composite-id name="id" class="a.AlumnoModuloId">
+            <key-property name="codAlumno" type="string">
+                <column name="cod_alumno" length="2" />
+            </key-property>
+            <key-property name="codModulo" type="string">
+                <column name="cod_modulo" length="4" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="alumno" class="a.Alumno" update="false" insert="false" fetch="select">
+            <column name="cod_alumno" length="2" not-null="true" />
+        </many-to-one>
+        <many-to-one name="modulo" class="a.Modulo" update="false" insert="false" fetch="select">
+            <column name="cod_modulo" length="4" not-null="true" />
+        </many-to-one>
+        <property name="nota" type="java.lang.Integer">
+            <column name="nota" />
+        </property>
+    </class>
+</hibernate-mapping>
