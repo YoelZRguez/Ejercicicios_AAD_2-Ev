@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-mar-2023 19:13:49 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Clases.Modulo" table="modulo" catalog="instituto1" optimistic-lock="version">
+        <id name="codModulo" type="string">
+            <column name="cod_modulo" length="4" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="ciclo" class="Clases.Ciclo" fetch="select">
+            <column name="cod_ciclo" length="10" />
+        </many-to-one>
+        <many-to-one name="profesor" class="Clases.Profesor" fetch="select">
+            <column name="cod_profesor" length="2" />
+        </many-to-one>
+        <property name="nombreModulo" type="string">
+            <column name="nombre_modulo" length="30" />
+        </property>
+        <property name="curso" type="string">
+            <column name="curso" length="1" />
+        </property>
+        <set name="alumnoModulos" table="`alumno-modulo`" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cod_modulo" length="4" not-null="true" />
+            </key>
+            <one-to-many class="Clases.AlumnoModulo" />
+        </set>
+    </class>
+</hibernate-mapping>
