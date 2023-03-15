@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<frutas>
+	<primavera fresa="15">
+		Villaviciosa
+	</primavera>
+	<verano arandano="52" mora="33" cereza="27">
+		Llanes
+	</verano>
+	<otoño castaña="32" nuez="19" >
+		Luarca
+	</otoño>
+	<invierno melocoton="12" naranja="16" mandarina="21" pomelo="31">
+		Tineo
+	</invierno>
+</frutas>
